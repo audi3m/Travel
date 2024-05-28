@@ -22,7 +22,7 @@ class TravelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        print("Travel cell awakeFromNib") // 8번만 프린트. 재사용 셀 갯수만큼 실행.
+        print("Travel cell awakeFromNib") // 8번만 프린트. 재사용 셀의 수만큼 실행.
         configureLayout()
     }
      
@@ -32,15 +32,11 @@ class TravelTableViewCell: UITableViewCell {
     }
     
     func configureLayout() {
-        titleLabel.font = .boldSystemFont(ofSize: 16)
+        titleLabel.design(size: 16, weight: .bold)
+        descriptionLabel.design(color: .darkGray)
+        infoLabel.design(color: .lightGray)
         
-        descriptionLabel.textColor = .darkGray
-        
-        infoLabel.textColor = .lightGray
-        
-        travelImageView.backgroundColor = .systemGray6
-        travelImageView.layer.cornerRadius = 10
-        travelImageView.contentMode = .scaleAspectFill
+        travelImageView.imageViewSetting(backgroundColor: .systemGray6, cornerRadius: 10)
         
         likeButton.setTitle("", for: .normal)
         likeButton.tintColor = .white

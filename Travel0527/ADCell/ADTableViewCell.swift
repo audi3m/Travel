@@ -37,9 +37,7 @@ class ADTableViewCell: UITableViewCell {
         adLabel.backgroundColor = .white
         adLabel.layer.cornerRadius = 5
         
-        adTextLabel.textAlignment = .center
-        adTextLabel.numberOfLines = 0
-        adTextLabel.font = .boldSystemFont(ofSize: 15)
+        adTextLabel.design(size: 15, weight: .bold, numberOfLines: 0, align: .center)
     }
     
     func configureText(data: Travel) {
