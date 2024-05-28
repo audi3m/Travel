@@ -10,6 +10,8 @@ import Kingfisher
 
 class TravelTableViewCell: UITableViewCell {
     
+    static let travelCellIdentifier = "TravelTableViewCell"
+    
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
@@ -21,11 +23,14 @@ class TravelTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureLayout()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         
     }
     
     func configureLayout() {
-        
         titleLabel.font = .boldSystemFont(ofSize: 16)
         
         descriptionLabel.textColor = .darkGray
@@ -75,15 +80,3 @@ class TravelTableViewCell: UITableViewCell {
     
 }
 
-
-
-
-//struct Travel {
-//    var title: String
-//    var description: String?
-//    var travel_image: String?
-//    var grade: Double?
-//    var save: Int?
-//    var like: Bool?
-//    var ad: Bool
-//}
