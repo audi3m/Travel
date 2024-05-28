@@ -9,7 +9,7 @@ import UIKit
 
 class ADTableViewCell: UITableViewCell {
     
-    static let adCellIdentifier = "ADTableViewCell"
+    static let identifier = "ADTableViewCell"
      
     @IBOutlet var adLabel: UILabel!
     @IBOutlet var adTextLabel: UILabel!
@@ -18,8 +18,15 @@ class ADTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        print("AD Cell awakeFromNib")
         configureAD()
-        
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // 터치하면 색이 변함 ??
+//        let colors: [UIColor] = [.green, .blue, .red, .orange]
+//        adUIView.backgroundColor = colors.randomElement()?.withAlphaComponent(0.2)
     }
     
     func configureAD() {

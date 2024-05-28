@@ -10,7 +10,7 @@ import Kingfisher
 
 class TravelTableViewCell: UITableViewCell {
     
-    static let travelCellIdentifier = "TravelTableViewCell"
+    static let identifier = "TravelTableViewCell"
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -22,12 +22,13 @@ class TravelTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        print("Travel cell awakeFromNib") // 8번만 프린트. 재사용 셀 갯수만큼 실행.
         configureLayout()
     }
-    
+     
     override func layoutSubviews() {
         super.layoutSubviews()
-        
+        print(#function)
     }
     
     func configureLayout() {
@@ -47,7 +48,7 @@ class TravelTableViewCell: UITableViewCell {
         
         for i in 0..<5 {
             stars[i].image = UIImage(systemName: "star.fill")
-            stars[i].tintColor = .lightGray
+            stars[i].tintColor = .systemGray5
         }
     }
     
@@ -56,25 +57,26 @@ class TravelTableViewCell: UITableViewCell {
         
         descriptionLabel.text = data.description ?? ""
         
-        let grade = Int(round(data.grade ?? 0.0))
         setStars()
-        for i in 0..<grade {
+        for i in 0..<data.gradeToInt {
             stars[i].tintColor = .systemYellow
         }
         
-        infoLabel.text = "저장 " + (data.save ?? 0).formatted()
+        infoLabel.text = data.saveCountString
         
         let url = URL(string: data.travel_image!)
         travelImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "paperplane"))
         
         let image = UIImage(systemName: (data.like ?? false) ? "heart.fill" : "heart")
         likeButton.setImage(image, for: .normal)
+        likeButton.tintColor = (data.like ?? false) ? UIColor.systemPink : .white
         
+        print("\(data.title) - configured")
     }
     
     func setStars() {
         for i in 0..<5 {
-            stars[i].tintColor = .lightGray
+            stars[i].tintColor = .systemGray5
         }
     }
     

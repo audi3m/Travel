@@ -14,6 +14,14 @@ struct Travel {
     var save: Int?
     var like: Bool?
     let ad: Bool
+    
+    var saveCountString: String {
+        "저장 " + (self.save ?? 0).formatted()
+    }
+    
+    var gradeToInt: Int {
+        Int(round(self.grade ?? 0.0))
+    }
 }
 
 struct TravelInfo {

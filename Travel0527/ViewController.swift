@@ -21,12 +21,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         filteredList = list
         travelTableView.delegate = self
         travelTableView.dataSource = self
+        travelTableView.rowHeight = UITableView.automaticDimension
         
-        let adXib = UINib(nibName: ADTableViewCell.adCellIdentifier, bundle: nil)
-        travelTableView.register(adXib, forCellReuseIdentifier: ADTableViewCell.adCellIdentifier)
+        let adXib = UINib(nibName: ADTableViewCell.identifier, bundle: nil)
+        travelTableView.register(adXib, forCellReuseIdentifier: ADTableViewCell.identifier)
         
-        let xib = UINib(nibName: TravelTableViewCell.travelCellIdentifier, bundle: nil) // XIB 파일 이름
-        travelTableView.register(xib, forCellReuseIdentifier: TravelTableViewCell.travelCellIdentifier) // 셀 identifier
+        let xib = UINib(nibName: TravelTableViewCell.identifier, bundle: nil) // XIB 파일 이름
+        travelTableView.register(xib, forCellReuseIdentifier: TravelTableViewCell.identifier) // 셀 identifier
         
     }
     
@@ -38,7 +39,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let data = filteredList[indexPath.row]
         
         if data.ad {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.adCellIdentifier, for: indexPath) as! ADTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
             cell.configureText(data: data)
             
             let colors: [UIColor] = [.green, .blue, .red, .orange]
@@ -46,7 +47,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.travelCellIdentifier, for: indexPath) as! TravelTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as! TravelTableViewCell
             
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
