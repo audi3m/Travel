@@ -22,12 +22,12 @@ class ADTableViewCell: UITableViewCell {
         configureAD()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
         // 터치하면 색이 변함 ??
 //        let colors: [UIColor] = [.green, .blue, .red, .orange]
 //        adUIView.backgroundColor = colors.randomElement()?.withAlphaComponent(0.2)
-    }
+//    }
     
     func configureAD() {
         adUIView.layer.cornerRadius = 10

@@ -25,11 +25,6 @@ class TravelTableViewCell: UITableViewCell {
         print("Travel cell awakeFromNib") // 8번만 프린트. 재사용 셀의 수만큼 실행.
         configureLayout()
     }
-     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        print(#function)
-    }
     
     func configureLayout() {
         titleLabel.design(size: 16, weight: .bold)

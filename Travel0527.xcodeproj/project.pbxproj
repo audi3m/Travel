@@ -21,6 +21,10 @@
 		D4228C372C04B6A600EC924A /* ADTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4228C352C04B6A600EC924A /* ADTableViewCell.xib */; };
 		D4228C772C062AC900EC924A /* UIImageView+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4228C762C062AC900EC924A /* UIImageView+Ex.swift */; };
 		D4228C792C062BBC00EC924A /* UILabel+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4228C782C062BBC00EC924A /* UILabel+Ex.swift */; };
+		D4228C7F2C0763E600EC924A /* ADDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4228C7E2C0763E600EC924A /* ADDetailViewController.swift */; };
+		D4228C812C07640D00EC924A /* ADDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4228C802C07640D00EC924A /* ADDetail.storyboard */; };
+		D4228C832C0765A800EC924A /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4228C822C0765A800EC924A /* TravelDetailViewController.swift */; };
+		D4228C852C0765B200EC924A /* TravelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4228C842C0765B200EC924A /* TravelDetail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		D4228C352C04B6A600EC924A /* ADTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ADTableViewCell.xib; sourceTree = "<group>"; };
 		D4228C762C062AC900EC924A /* UIImageView+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Ex.swift"; sourceTree = "<group>"; };
 		D4228C782C062BBC00EC924A /* UILabel+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Ex.swift"; sourceTree = "<group>"; };
+		D4228C7E2C0763E600EC924A /* ADDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADDetailViewController.swift; sourceTree = "<group>"; };
+		D4228C802C07640D00EC924A /* ADDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ADDetail.storyboard; sourceTree = "<group>"; };
+		D4228C822C0765A800EC924A /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
+		D4228C842C0765B200EC924A /* TravelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TravelDetail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +84,8 @@
 				D4228C172C04706600EC924A /* SceneDelegate.swift */,
 				D4228C1B2C04706600EC924A /* Main.storyboard */,
 				D4228C192C04706600EC924A /* ViewController.swift */,
-				D4228C322C04B68700EC924A /* TravelCell */,
 				D4228C2D2C04720400EC924A /* TravelModel.swift */,
+				D4228C322C04B68700EC924A /* TravelCell */,
 				D4228C332C04B69300EC924A /* ADCell */,
 				D4228C752C062ABA00EC924A /* Extentions */,
 				D4228C1E2C04706700EC924A /* Assets.xcassets */,
@@ -92,6 +100,8 @@
 			children = (
 				D4228C2A2C0471BE00EC924A /* TravelTableViewCell.xib */,
 				D4228C292C0471BE00EC924A /* TravelTableViewCell.swift */,
+				D4228C842C0765B200EC924A /* TravelDetail.storyboard */,
+				D4228C822C0765A800EC924A /* TravelDetailViewController.swift */,
 			);
 			path = TravelCell;
 			sourceTree = "<group>";
@@ -101,6 +111,8 @@
 			children = (
 				D4228C352C04B6A600EC924A /* ADTableViewCell.xib */,
 				D4228C342C04B6A600EC924A /* ADTableViewCell.swift */,
+				D4228C802C07640D00EC924A /* ADDetail.storyboard */,
+				D4228C7E2C0763E600EC924A /* ADDetailViewController.swift */,
 			);
 			path = ADCell;
 			sourceTree = "<group>";
@@ -181,7 +193,9 @@
 				D4228C1F2C04706700EC924A /* Assets.xcassets in Resources */,
 				D4228C2C2C0471BE00EC924A /* TravelTableViewCell.xib in Resources */,
 				D4228C222C04706700EC924A /* Base in Resources */,
+				D4228C852C0765B200EC924A /* TravelDetail.storyboard in Resources */,
 				D4228C1D2C04706600EC924A /* Base in Resources */,
+				D4228C812C07640D00EC924A /* ADDetail.storyboard in Resources */,
 				D4228C372C04B6A600EC924A /* ADTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -195,11 +209,13 @@
 			files = (
 				D4228C1A2C04706600EC924A /* ViewController.swift in Sources */,
 				D4228C2B2C0471BE00EC924A /* TravelTableViewCell.swift in Sources */,
+				D4228C832C0765A800EC924A /* TravelDetailViewController.swift in Sources */,
 				D4228C2E2C04720400EC924A /* TravelModel.swift in Sources */,
 				D4228C162C04706600EC924A /* AppDelegate.swift in Sources */,
 				D4228C362C04B6A600EC924A /* ADTableViewCell.swift in Sources */,
 				D4228C182C04706600EC924A /* SceneDelegate.swift in Sources */,
 				D4228C792C062BBC00EC924A /* UILabel+Ex.swift in Sources */,
+				D4228C7F2C0763E600EC924A /* ADDetailViewController.swift in Sources */,
 				D4228C772C062AC900EC924A /* UIImageView+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

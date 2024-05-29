@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
     let list = TravelInfo.travel
     var filteredList: [Travel] = []
@@ -16,19 +16,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "도시 상세 정보"
-        
-        filteredList = list
-        travelTableView.delegate = self
-        travelTableView.dataSource = self
-        travelTableView.rowHeight = UITableView.automaticDimension
-        
-        let adXib = UINib(nibName: ADTableViewCell.identifier, bundle: nil)
-        travelTableView.register(adXib, forCellReuseIdentifier: ADTableViewCell.identifier)
-        
         let xib = UINib(nibName: TravelTableViewCell.identifier, bundle: nil) // XIB 파일 이름
-        travelTableView.register(xib, forCellReuseIdentifier: TravelTableViewCell.identifier) // 셀 identifier
-        
+        let adXib = UINib(nibName: ADTableViewCell.identifier, bundle: nil)
+        configureTableView(travelXib: xib, adXib: adXib)
+    }
+    
+    @objc func likeButtonClicked(sender: UIButton) {
+        let tag = sender.tag
+        filteredList[tag].like?.toggle()
+        travelTableView.reloadRows(at: [IndexPath.SubSequence(row: sender.tag, section: 0)], with: .automatic)
+    }
+
+}
+
+extension ViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let data = filteredList[indexPath.row]
+        return data.ad ? 100 : 130
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,16 +61,45 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let data = filteredList[indexPath.row]
-        return data.ad ? 100 : 130
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = list[indexPath.row]
+        print(#function)
+        
+        if data.ad {
+            let sb = UIStoryboard(name: "ADDetail", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: ADDetailViewController.id) as! ADDetailViewController
+            
+            let nav = UINavigationController(rootViewController: vc)
+            nav.modalPresentationStyle = .fullScreen
+            
+            // 3. 화면 띄우기 - 타이틀 나옴. 여전히 present
+            present(nav, animated: true)
+        } else {
+            let sb = UIStoryboard(name: "TravelDetail", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: TravelDetailViewController.id) as! TravelDetailViewController
+            navigationController?.pushViewController(vc, animated: true)
+            
+        }
+        
+        // selection 없애기
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        
     }
-    
-    @objc func likeButtonClicked(sender: UIButton) {
-        let tag = sender.tag
-        filteredList[tag].like?.toggle()
-        travelTableView.reloadRows(at: [IndexPath.SubSequence(row: sender.tag, section: 0)], with: .automatic)
-    }
-
 }
 
+
+// MARK: TableView Setting
+extension ViewController {
+    func configureTableView(travelXib: UINib, adXib: UINib) {
+        navigationItem.title = "도시 상세 정보"
+        
+        filteredList = list
+        travelTableView.delegate = self
+        travelTableView.dataSource = self
+        travelTableView.rowHeight = UITableView.automaticDimension
+        
+        travelTableView.register(travelXib, forCellReuseIdentifier: TravelTableViewCell.identifier) // 셀 identifier
+        travelTableView.register(adXib, forCellReuseIdentifier: ADTableViewCell.identifier)
+        
+    }
+}
