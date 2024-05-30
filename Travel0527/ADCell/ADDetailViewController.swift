@@ -11,19 +11,27 @@ class ADDetailViewController: UIViewController {
     
     static let id = "ADDetailViewController"
     
+    var data: Travel?
+    
     @IBOutlet var adLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "광고"
-        
-        adLabel.text = "광고 화면"
-        adLabel.font = .boldSystemFont(ofSize: 30)
+        configureUIAndData()
         
         let dismissButton = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(dismissButtonClicked))
         navigationItem.rightBarButtonItem = dismissButton
         
     }
+    
+    func configureUIAndData() {
+        navigationItem.title = "광고"
+        adLabel.font = .boldSystemFont(ofSize: 24)
+        adLabel.textAlignment = .center
+        adLabel.text = data?.title ?? ""
+        
+    }
+    
     
     @objc func dismissButtonClicked() {
         dismiss(animated: true)

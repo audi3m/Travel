@@ -6,29 +6,89 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TravelDetailViewController: UIViewController {
     
-    static let id = "TravelDetailViewController"
+    @IBOutlet var travelImageView: UIImageView!
     
-    @IBOutlet var travelScreenLabel: UILabel!
-    @IBOutlet var popButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    
+    @IBOutlet var starRatingImages: [UIImageView]!
+    
+    @IBOutlet var ratingLabel: UILabel!
+    
+    @IBOutlet var descLabel: UILabel!
+    
+    
+    static let id = "TravelDetailViewController"
+    var data: Travel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "관광지 화면"
-        travelScreenLabel.text = "관광지 화면"
-        travelScreenLabel.font = .boldSystemFont(ofSize: 30)
-        
-        popButton.setTitle("Pop", for: .normal)
+        navigationItem.title = "상세 정보"
+        configureUI()
+        configureData()
         
     }
     
-    @IBAction func popButtonClicked(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+    
+    
+    func configureUI() {
+        travelImageView.backgroundColor = .systemGray6
+        travelImageView.contentMode = .scaleAspectFill
+        
+        titleLabel.font = .boldSystemFont(ofSize: 20)
+        
+        for i in 0..<5 {
+            starRatingImages[i].image = UIImage(systemName: "star.fill")
+            starRatingImages[i].tintColor = .systemGray5
+        }
+        
+        ratingLabel.textColor = .gray
+        
         
     }
+    
+    func configureData() {
+        guard let data else { return }
+        
+        let url = URL(string: data.travel_image!)
+        travelImageView.kf.setImage(with: url, placeholder: UIImage(systemName: "suitcase"))
+        
+        titleLabel.text = data.title
+        ratingLabel.text = data.saveCountString
+        descLabel.text = data.description
+        
+        for i in 0..<data.gradeToInt {
+            starRatingImages[i].tintColor = .yellow
+        }
+        
+    }
+    
     
 
 }
+
+
+
+
+
+//struct Travel {
+//    let title: String
+//    var description: String?
+//    var travel_image: String?
+//    var grade: Double?
+//    var save: Int?
+//    var like: Bool?
+//    let ad: Bool
+//    
+//    var saveCountString: String {
+//        "저장 " + (self.save ?? 0).formatted()
+//    }
+//    
+//    var gradeToInt: Int {
+//        Int(round(self.grade ?? 0.0))
+//    }
+//}

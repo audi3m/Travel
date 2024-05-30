@@ -68,7 +68,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         if data.ad {
             let sb = UIStoryboard(name: "ADDetail", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: ADDetailViewController.id) as! ADDetailViewController
-            
+            vc.data = data
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
             
@@ -77,6 +77,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             let sb = UIStoryboard(name: "TravelDetail", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: TravelDetailViewController.id) as! TravelDetailViewController
+            vc.data = data
             navigationController?.pushViewController(vc, animated: true)
             
         }
