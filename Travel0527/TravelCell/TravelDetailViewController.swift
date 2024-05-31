@@ -46,7 +46,10 @@ class TravelDetailViewController: UIViewController {
             starRatingImages[i].tintColor = .systemGray5
         }
         
-        ratingLabel.textColor = .gray
+        ratingLabel.textColor = .lightGray
+        ratingLabel.font = .systemFont(ofSize: 14)
+        
+        descLabel.numberOfLines = 0
         
         
     }
@@ -62,7 +65,7 @@ class TravelDetailViewController: UIViewController {
         descLabel.text = data.description
         
         for i in 0..<data.gradeToInt {
-            starRatingImages[i].tintColor = .yellow
+            starRatingImages[i].tintColor = .systemYellow
         }
         
     }

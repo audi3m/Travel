@@ -16,8 +16,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let xib = UINib(nibName: TravelTableViewCell.identifier, bundle: nil) // XIB 파일 이름
-        let adXib = UINib(nibName: ADTableViewCell.identifier, bundle: nil)
+        let xib = UINib(nibName: TravelTableViewCell.id, bundle: nil) // XIB 파일 이름
+        let adXib = UINib(nibName: ADTableViewCell.id, bundle: nil)
         configureTableView(travelXib: xib, adXib: adXib)
     }
     
@@ -44,15 +44,14 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let data = filteredList[indexPath.row]
         
         if data.ad {
-            let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.identifier, for: indexPath) as! ADTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: ADTableViewCell.id, for: indexPath) as! ADTableViewCell
             cell.configureText(data: data)
             
             let colors: [UIColor] = [.green, .blue, .red, .orange]
             cell.adUIView.backgroundColor = colors.randomElement()?.withAlphaComponent(0.2)
-            
             return cell
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.identifier, for: indexPath) as! TravelTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: TravelTableViewCell.id, for: indexPath) as! TravelTableViewCell
             
             cell.likeButton.tag = indexPath.row
             cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
@@ -63,7 +62,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let data = list[indexPath.row]
-        print(#function)
         
         if data.ad {
             let sb = UIStoryboard(name: "ADDetail", bundle: nil)
@@ -99,8 +97,8 @@ extension ViewController {
         travelTableView.dataSource = self
         travelTableView.rowHeight = UITableView.automaticDimension
         
-        travelTableView.register(travelXib, forCellReuseIdentifier: TravelTableViewCell.identifier) // 셀 identifier
-        travelTableView.register(adXib, forCellReuseIdentifier: ADTableViewCell.identifier)
+        travelTableView.register(travelXib, forCellReuseIdentifier: TravelTableViewCell.id) // 셀 identifier
+        travelTableView.register(adXib, forCellReuseIdentifier: ADTableViewCell.id)
         
     }
 }

@@ -33,50 +33,50 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o87-oi-fNL">
-                                <rect key="frame" x="16" y="421" width="361" height="21"/>
+                                <rect key="frame" x="16" y="418" width="361" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zNC-kx-oeA">
-                                <rect key="frame" x="16" y="381" width="24" height="24"/>
+                                <rect key="frame" x="16" y="381" width="21" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="FY5-gb-Cn4"/>
-                                    <constraint firstAttribute="width" constant="24" id="WXo-qe-NmQ"/>
+                                    <constraint firstAttribute="height" constant="21" id="FY5-gb-Cn4"/>
+                                    <constraint firstAttribute="width" constant="21" id="WXo-qe-NmQ"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gne-QA-1Ox">
-                                <rect key="frame" x="40" y="381" width="24" height="24"/>
+                                <rect key="frame" x="37" y="381" width="21" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="DZM-gw-48a"/>
-                                    <constraint firstAttribute="width" constant="24" id="Qjf-UC-mSa"/>
+                                    <constraint firstAttribute="height" constant="21" id="DZM-gw-48a"/>
+                                    <constraint firstAttribute="width" constant="21" id="Qjf-UC-mSa"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IG2-Aq-3te">
-                                <rect key="frame" x="64" y="381" width="24" height="24"/>
+                                <rect key="frame" x="58" y="381" width="21" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="M7e-Xc-4EH"/>
-                                    <constraint firstAttribute="width" constant="24" id="p79-OT-coe"/>
+                                    <constraint firstAttribute="height" constant="21" id="M7e-Xc-4EH"/>
+                                    <constraint firstAttribute="width" constant="21" id="p79-OT-coe"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5c7-fd-3Md">
-                                <rect key="frame" x="88" y="381" width="24" height="24"/>
+                                <rect key="frame" x="79" y="381" width="21" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="IWW-L6-RZw"/>
-                                    <constraint firstAttribute="width" constant="24" id="v6j-N6-a5Y"/>
+                                    <constraint firstAttribute="height" constant="21" id="IWW-L6-RZw"/>
+                                    <constraint firstAttribute="width" constant="21" id="v6j-N6-a5Y"/>
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xak-Kl-KI2">
-                                <rect key="frame" x="112" y="381" width="24" height="24"/>
+                                <rect key="frame" x="100" y="381" width="21" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="24" id="Gef-cp-CPt"/>
-                                    <constraint firstAttribute="height" constant="24" id="fhf-yp-zRp"/>
+                                    <constraint firstAttribute="width" constant="21" id="Gef-cp-CPt"/>
+                                    <constraint firstAttribute="height" constant="21" id="fhf-yp-zRp"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDl-Ac-Ap5">
-                                <rect key="frame" x="144" y="381" width="233" height="24"/>
+                                <rect key="frame" x="129" y="381" width="248" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="VwW-XX-wyu"/>
+                                    <constraint firstAttribute="height" constant="21" id="VwW-XX-wyu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

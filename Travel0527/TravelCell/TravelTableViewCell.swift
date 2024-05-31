@@ -10,7 +10,7 @@ import Kingfisher
 
 class TravelTableViewCell: UITableViewCell {
     
-    static let identifier = "TravelTableViewCell"
+    static let id = "TravelTableViewCell"
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var descriptionLabel: UILabel!
@@ -28,8 +28,8 @@ class TravelTableViewCell: UITableViewCell {
     
     func configureLayout() {
         titleLabel.design(size: 16, weight: .bold)
-        descriptionLabel.design(color: .darkGray)
-        infoLabel.design(color: .lightGray)
+        descriptionLabel.design(size: 14, color: .darkGray, numberOfLines: 0)
+        infoLabel.design(size: 13, color: .lightGray)
         
         travelImageView.imageViewSetting(backgroundColor: .systemGray6, cornerRadius: 10)
         

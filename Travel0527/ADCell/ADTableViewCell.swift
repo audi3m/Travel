@@ -9,7 +9,7 @@ import UIKit
 
 class ADTableViewCell: UITableViewCell {
     
-    static let identifier = "ADTableViewCell"
+    static let id = "ADTableViewCell"
      
     @IBOutlet var adLabel: UILabel!
     @IBOutlet var adTextLabel: UILabel!
