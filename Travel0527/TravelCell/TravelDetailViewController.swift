@@ -11,29 +11,19 @@ import Kingfisher
 class TravelDetailViewController: UIViewController {
     
     @IBOutlet var travelImageView: UIImageView!
-    
     @IBOutlet var titleLabel: UILabel!
-    
     @IBOutlet var starRatingImages: [UIImageView]!
-    
     @IBOutlet var ratingLabel: UILabel!
-    
     @IBOutlet var descLabel: UILabel!
     
-    
-    static let id = "TravelDetailViewController"
     var data: Travel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "상세 정보"
         configureUI()
         configureData()
-        
     }
-    
-    
     
     func configureUI() {
         travelImageView.backgroundColor = .systemGray6
@@ -50,8 +40,6 @@ class TravelDetailViewController: UIViewController {
         ratingLabel.font = .systemFont(ofSize: 14)
         
         descLabel.numberOfLines = 0
-        
-        
     }
     
     func configureData() {
@@ -67,11 +55,7 @@ class TravelDetailViewController: UIViewController {
         for i in 0..<data.gradeToInt {
             starRatingImages[i].tintColor = .systemYellow
         }
-        
     }
-    
-    
-
 }
 
 

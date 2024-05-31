@@ -25,6 +25,7 @@
 		D4228C812C07640D00EC924A /* ADDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4228C802C07640D00EC924A /* ADDetail.storyboard */; };
 		D4228C832C0765A800EC924A /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4228C822C0765A800EC924A /* TravelDetailViewController.swift */; };
 		D4228C852C0765B200EC924A /* TravelDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D4228C842C0765B200EC924A /* TravelDetail.storyboard */; };
+		D4F2B6992C0A0C7500F575C2 /* Cell+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F2B6982C0A0C7500F575C2 /* Cell+Ex.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		D4228C802C07640D00EC924A /* ADDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ADDetail.storyboard; sourceTree = "<group>"; };
 		D4228C822C0765A800EC924A /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
 		D4228C842C0765B200EC924A /* TravelDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TravelDetail.storyboard; sourceTree = "<group>"; };
+		D4F2B6982C0A0C7500F575C2 /* Cell+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cell+Ex.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				D4228C762C062AC900EC924A /* UIImageView+Ex.swift */,
 				D4228C782C062BBC00EC924A /* UILabel+Ex.swift */,
+				D4F2B6982C0A0C7500F575C2 /* Cell+Ex.swift */,
 			);
 			path = Extentions;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				D4228C2E2C04720400EC924A /* TravelModel.swift in Sources */,
 				D4228C162C04706600EC924A /* AppDelegate.swift in Sources */,
 				D4228C362C04B6A600EC924A /* ADTableViewCell.swift in Sources */,
+				D4F2B6992C0A0C7500F575C2 /* Cell+Ex.swift in Sources */,
 				D4228C182C04706600EC924A /* SceneDelegate.swift in Sources */,
 				D4228C792C062BBC00EC924A /* UILabel+Ex.swift in Sources */,
 				D4228C7F2C0763E600EC924A /* ADDetailViewController.swift in Sources */,

@@ -9,8 +9,6 @@ import UIKit
 
 class ADDetailViewController: UIViewController {
     
-    static let id = "ADDetailViewController"
-    
     var data: Travel?
     
     @IBOutlet var adLabel: UILabel!

@@ -77,7 +77,6 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = sb.instantiateViewController(withIdentifier: TravelDetailViewController.id) as! TravelDetailViewController
             vc.data = data
             navigationController?.pushViewController(vc, animated: true)
-            
         }
         
         // selection 없애기
